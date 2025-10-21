@@ -9,5 +9,3 @@
 ## 🛠️ Công cụ sử dụng
 - Hugo v0.151.2
 - Git & GitHub
-- Sẽ triển khai GitHub Pages (Ngày 2)
-- Theme: sẽ chọn ở Ngày 2
