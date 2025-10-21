@@ -1,4 +1,4 @@
-baseURL = "https://sang6386.github.io/myblog/"
+baseURL = "http://localhost:1313/"
 languageCode = "vi"
 title = "My Blog - Sang"
 theme = "ananke"
@@ -28,3 +28,9 @@ theme = "ananke"
     name = "Contact"
     url = "/contact/"
     weight = 4
+
+# ✅ Cho phép HTML trong Markdown (để hiển thị <img>, <iframe>, v.v.)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
