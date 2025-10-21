@@ -1,3 +1,30 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://sang6386.github.io/myblog/"
+languageCode = "vi"
+title = "My Blog - Sang"
+theme = "ananke"
+
+[params]
+  author = "Sang"
+  description = "Blog cá nhân chia sẻ về Lập trình mạng, Socket, RMI"
+  github = "https://github.com/sang6386"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 4
