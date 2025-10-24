@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Control Flow on My Blog - Sang</title><link>https://sang6386.github.io/myblog/tags/control-flow/</link><description>Recent content in Control Flow on My Blog - Sang</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Thu, 23 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://sang6386.github.io/myblog/tags/control-flow/index.xml" rel="self" type="application/rss+xml"/><item><title>JavaScript Essentials 1(Phần 2) — Biểu thức, Toán tử và Cấu trúc điều kiện</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-1_2/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-1_2/</guid><description>&lt;h1 id="-javascript-essentials-1--biểu-thức-toán-tử-và-cấu-trúc-điều-kiện-chuyên-sâu"&gt;⚙️ JavaScript Essentials 1 — Biểu thức, Toán tử và Cấu trúc điều kiện (Chuyên sâu)&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Tóm tắt:&lt;/strong&gt;
+Bài viết này giúp bạn hiểu sâu về cách JavaScript &lt;strong&gt;tính toán biểu thức&lt;/strong&gt;, &lt;strong&gt;vận hành toán tử&lt;/strong&gt;, và &lt;strong&gt;điều khiển luồng chương trình&lt;/strong&gt; qua cấu trúc điều kiện.&lt;br&gt;
+Dựa theo khóa học &lt;em&gt;JavaScript Essentials 1&lt;/em&gt; trên Cisco Networking Academy.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="-mục-lục"&gt;📘 Mục lục&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="#gi%E1%BB%9Bi-thi%E1%BB%87u"&gt;Giới thiệu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#bi%E1%BB%83u-th%E1%BB%A9c-expressions"&gt;Biểu thức (Expressions)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#to%C3%A1n-t%E1%BB%AD-operators"&gt;Toán tử (Operators)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#c%E1%BA%A5u-tr%C3%BAc-%C4%91i%E1%BB%81u-ki%E1%BB%87n-conditional-structures"&gt;Cấu trúc điều kiện (Conditional Structures)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#b%C3%A0i-t%E1%BA%ADp-th%E1%BB%B1c-h%C3%A0nh-nh%E1%BB%8F"&gt;Bài tập thực hành nhỏ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#t%E1%BB%95ng-k%E1%BA%BFt"&gt;Tổng kết&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="-giới-thiệu"&gt;🔹 Giới thiệu&lt;/h2&gt;
+&lt;p&gt;Trong lập trình, &lt;strong&gt;biểu thức&lt;/strong&gt; là công cụ biểu diễn logic và biến đổi dữ liệu, còn &lt;strong&gt;toán tử&lt;/strong&gt; là hành động thực hiện trên các giá trị.&lt;br&gt;
+&lt;strong&gt;Cấu trúc điều kiện&lt;/strong&gt; giúp điều hướng luồng chương trình tùy theo các tình huống cụ thể.&lt;br&gt;
+Hiểu đúng cơ chế hoạt động giúp code &lt;strong&gt;hiệu quả&lt;/strong&gt;, &lt;strong&gt;an toàn&lt;/strong&gt; và &lt;strong&gt;dễ bảo trì&lt;/strong&gt;.&lt;/p&gt;</description></item></channel></rss>
