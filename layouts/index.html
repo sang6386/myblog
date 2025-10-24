@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <section class="pa3 pa4-ns">
+    <h1 class="f2 tc">📰 Bài viết mới nhất</h1>
+    <div class="flex-ns flex-wrap justify-around mt4">
+      {{ $posts := where .Site.RegularPages "Section" "posts" }}
+      {{ range $posts }}
+        <article class="w-100 w-30-l mb4 pa3 bg-white br3 shadow-1 hover-bg-near-white transition-all">
+          {{ if .Params.image }}
+            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="br2 w-100 mb2" loading="lazy">
+          {{ end }}
+          <h2 class="f4 fw6 lh-title">
+            <a href="{{ .RelPermalink }}" class="link dark-blue hover-mid-gray">
+              {{ .Title }}
+            </a>
+          </h2>
+          <p class="f6 gray mt0 mb2">
+            📅 {{ .Date.Format "02/01/2006" }}
+            {{ with .Params.tags }} — 🏷️ {{ delimit . ", " }} {{ end }}
+          </p>
+          <p class="lh-copy measure">
+            {{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
+          </p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
