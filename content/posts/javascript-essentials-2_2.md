@@ -1,6 +1,6 @@
 +++
 title = "JavaScript Essentials 2 (Phần 2) — Đối tượng, Mảng và Lập trình Hướng Đối tượng (OOP)"
-date = "2025-10-25"
+date = "2025-10-23"
 draft = false
 tags = ["JavaScript", "Cisco", "OOP", "Web Development", "Object", "Array", "Class"]
 categories = ["Lập trình mạng", "Web Development"]
@@ -53,7 +53,7 @@ const student = {
 
 student.greet(); // Xin chào, mình là Nguyễn Ngọc Sang!
 console.log(student.age); // 21
-
+```
 ---
 
 ##📚 2. Mảng (Array) — Làm việc với danh sách dữ liệu
@@ -61,8 +61,8 @@ Mảng là danh sách có thứ tự của các phần tử, có thể chứa nh
 
 📘 Ví dụ:
 
-javascript
-Sao chép mã
+```javascript
+
 const scores = [85, 92, 78, 90];
 
 console.log(scores[0]);  // 85
@@ -81,6 +81,7 @@ javascript
 Sao chép mã
 const avg = scores.reduce((sum, s) => sum + s, 0) / scores.length;
 console.log(`Điểm trung bình: ${avg}`);
+```
 
 ---
 
@@ -89,8 +90,8 @@ JavaScript hỗ trợ cú pháp hướng đối tượng qua class (ES6+).
 
 📘 Ví dụ cơ bản:
 
-javascript
-Sao chép mã
+```javascript
+
 class Student {
   constructor(name, major) {
     this.name = name;
@@ -104,6 +105,7 @@ class Student {
 
 const s1 = new Student("Sang", "Công nghệ thông tin");
 s1.introduce();
+```
 💡 Giải thích:
 
 constructor được gọi khi khởi tạo đối tượng.
@@ -117,8 +119,7 @@ OOP trong JavaScript hỗ trợ kế thừa (inheritance) giúp lớp con mở r
 
 📘 Ví dụ:
 
-javascript
-Sao chép mã
+```javascript
 class Person {
   constructor(name) {
     this.name = name;
@@ -143,6 +144,8 @@ class Teacher extends Person {
 const teacher = new Teacher("Thầy Huy", "Mạng máy tính");
 teacher.greet();
 teacher.teach();
+```
+
 📘 Phân tích:
 
 Teacher kế thừa từ Person → có thể dùng cả greet() và teach().
@@ -155,8 +158,7 @@ super() giúp kế thừa và mở rộng constructor của lớp cha.
 🎯 Yêu cầu:
 Xây dựng hệ thống quản lý sinh viên đơn giản bằng Class & Array.
 
-javascript
-Sao chép mã
+```javascript
 class Student {
   constructor(name, scores) {
     this.name = name;
@@ -202,10 +204,13 @@ manager.addStudent(s1);
 manager.addStudent(s2);
 manager.addStudent(s3);
 manager.listStudents();
+```
+
 📘 Kết quả:
 
-makefile
-Sao chép mã
+```makefile
+
 Sang: 91.67 điểm — Xuất sắc
 Lan: 75.33 điểm — Khá
 Minh: 55.00 điểm — Trung bình
+```

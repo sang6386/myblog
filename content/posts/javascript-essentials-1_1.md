@@ -102,10 +102,12 @@ function greet(name) {
 console.log(greet("Sang"));
 ```
 🧩 Biến thể hiện đại:
+
 ```html
 const greet = (name) => `Xin chào, ${name}!`;
 ```
 🧪 Hàm có tham số mặc định:
+
 ```html
 function sum(a = 0, b = 0) {
   return a + b;
@@ -128,6 +130,7 @@ Nếu không có return, kết quả là undefined.
 JavaScript chạy tuần tự, nhưng bạn có thể điều hướng luồng logic bằng các cấu trúc điều kiện và vòng lặp.
 
 🔹 Cấu trúc if / else
+
 ```html
 let score = 85;
 
@@ -136,6 +139,7 @@ else if (score >= 75) console.log("Khá");
 else console.log("Trung bình");
 ```
 🔹 Cấu trúc switch / case
+
 ```html
 let day = 3;
 switch(day) {
@@ -146,12 +150,14 @@ switch(day) {
 }
 ```
 🔹 Vòng lặp for
+
 ```html
 for (let i = 1; i <= 5; i++) {
   console.log("Lần thứ " + i);
 }
 ```
 🔹 Vòng lặp while
+
 ```html
 let count = 0;
 while (count < 3) {
@@ -165,6 +171,7 @@ while (count < 3) {
 
 🎯 Yêu cầu:
 Viết chương trình yêu cầu người dùng nhập điểm và hiển thị xếp loại.
+
 ```html
 let score = prompt("Nhập điểm của bạn:");
 

@@ -56,17 +56,19 @@ function processUserInput(callback) {
 }
 
 processUserInput(greet);
+```
 
 ---
 
 🧩 Hàm ẩn danh & Arrow Function
-javascript
-Sao chép mã
+```javascript
+
 setTimeout(function() {
   console.log("Đây là hàm ẩn danh sau 2 giây");
 }, 2000);
 
 setTimeout(() => console.log("Arrow function sau 2 giây"), 2000);
+```
 
 ---
 
@@ -81,8 +83,7 @@ Block	Chỉ trong {} khi dùng let hoặc const	if(true){ const z=7; }
 
 📘 Ví dụ minh họa:
 
-javascript
-Sao chép mã
+```javascript
 let globalVar = "Toàn cục";
 
 function demoScope() {
@@ -93,6 +94,8 @@ function demoScope() {
 
 demoScope();
 console.log(localVar); // ❌ Lỗi — không tồn tại ngoài hàm
+```
+
 💡 Best Practice:
 Luôn khai báo biến bằng let hoặc const để tránh rò rỉ phạm vi (scope leakage).
 
@@ -103,7 +106,7 @@ Closure cho phép hàm “ghi nhớ” biến của phạm vi bên ngoài, ngay 
 
 📘 Ví dụ:
 
-javascript
+```javascript
 Sao chép mã
 function createCounter() {
   let count = 0;
@@ -117,6 +120,8 @@ const counter = createCounter();
 console.log(counter()); // 1
 console.log(counter()); // 2
 console.log(counter()); // 3
+```
+
 💡 Phân tích:
 
 createCounter() trả về một hàm con có thể truy cập count.
@@ -129,8 +134,8 @@ Biến count không bị mất đi nhờ closure.
 
 ### 🧪 4. Ứng dụng thực tế của Closure
 🧱 Ví dụ: Giới hạn số lần đăng nhập sai
-javascript
-Sao chép mã
+```javascript
+
 function loginAttemptLimiter(maxAttempts) {
   let attempts = 0;
 
@@ -149,6 +154,7 @@ checkLogin(); // Lần thử 1/3
 checkLogin(); // Lần thử 2/3
 checkLogin(); // Lần thử 3/3
 checkLogin(); // Tài khoản bị khóa!
+```
 📘 Closure ở đây giữ lại biến attempts ngay cả khi hàm loginAttemptLimiter đã chạy xong.
 
 ---
@@ -157,8 +163,7 @@ checkLogin(); // Tài khoản bị khóa!
 🎯 Mục tiêu:
 Tạo bộ đếm có các hàm increase(), decrease() và reset(), lưu trạng thái nhờ closure.
 
-javascript
-Sao chép mã
+```javascript
 function createSmartCounter() {
   let count = 0;
 
@@ -176,6 +181,7 @@ console.log(counter.increase()); // 2
 console.log(counter.decrease()); // 1
 console.log(counter.value());    // 1
 console.log(counter.reset());    // 0
+```
 💡 Điểm nổi bật:
 
 count là biến riêng tư, chỉ truy cập thông qua các hàm.

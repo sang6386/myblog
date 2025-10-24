@@ -44,6 +44,7 @@ let b = 5;
 let c = a * b + 2; // c = 52
 console.log(c);
 ```
+
 ## ⚖️ Ưu tiên toán tử (Operator Precedence)
 Quyết định phép toán nào được thực hiện trước.
 
@@ -52,6 +53,7 @@ Sao chép mã
 let x = 2 + 3 * 4;  // 2 + (3*4) = 14
 let y = (2 + 3) * 4; // 20
 ```
+
 ⚡ Side effects trong biểu thức
 Một số biểu thức có thể thay đổi trạng thái chương trình (side effect):
 
@@ -60,6 +62,7 @@ Sao chép mã
 let i = 0;
 let v = ++i + Math.abs(-2); // ++i thay đổi i; v = 3
 ```
+
 💡 Lưu ý: Hạn chế viết biểu thức có nhiều side-effect vì khó debug và dễ gây lỗi logic.
 
 ## 🔢 Toán tử (Operators)
@@ -78,12 +81,15 @@ Toán tử	Mô tả	Ví dụ	Kết quả
 '5' + 3; // "53" — nối chuỗi
 Number('5') + 3; // 8 — ép kiểu về số
 ```
+
 🧩 3.2 Toán tử gán
+
 ```javascript
 let x = 10;
 x += 5; // 15
 x *= 2; // 30
 ```
+
 ⚖️ 3.3 Toán tử so sánh
 Toán tử	Mô tả	Ví dụ	Kết quả
 ==	So sánh bằng (ép kiểu)	"5" == 5	true
@@ -122,6 +128,7 @@ if (score >= 90) console.log("Xuất sắc");
 else if (score >= 75) console.log("Khá");
 else console.log("Trung bình");
 ```
+
 📘 Best practice: Dùng return sớm để giảm độ sâu lồng nhau.
 
 🔸 4.2 Toán tử 3 ngôi (Ternary Operator)
@@ -129,6 +136,7 @@ else console.log("Trung bình");
 let age = 18;
 let result = (age >= 18) ? "Đủ tuổi" : "Chưa đủ tuổi";
 ```
+
 ⚠️ Tránh lạm dụng toán tử 3 ngôi trong logic phức tạp — dễ gây khó hiểu.
 
 🔸 4.3 switch / case
@@ -142,15 +150,18 @@ switch(day) {
   default: console.log("Không xác định");
 }
 ```
+
 🔸 4.4 Guard Clauses & Early Return
 
 ```javascript
+
 function process(order) {
   if (!order) return;
   if (!order.items?.length) return;
   // xử lý tiếp...
 }
 ```
+
 💡 Guard clause giúp code ngắn gọn, dễ đọc và ít bug hơn.
 
 ## 🧩 **Bài tập thực hành nhỏ**
@@ -174,6 +185,7 @@ function classifyStudent(student) {
 console.log(classifyStudent({name:"Sang",scores:[92,88,95]})); // Xuất sắc
 console.log(classifyStudent({name:"Lan",scores:[60,70,50]})); // Trung bình
 ```
+
 📘 Phân tích:
 
 Dữ liệu đầu vào được kiểm tra kỹ.
