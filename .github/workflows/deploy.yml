@@ -3,22 +3,29 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Khi bạn push lên nhánh main thì GitHub sẽ tự động build
+      - main  # Khi bạn push vào nhánh main thì sẽ tự động build và deploy
+
+permissions:
+  contents: write  # Cho phép ghi nội dung lên repo (cần cho gh-pages)
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
+        with:
+          submodules: true  # nếu bạn dùng theme bằng git submodule
+          fetch-depth: 0
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
+        uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.151.2'  # Phiên bản bạn đang dùng
+          hugo-version: '0.151.2'
           extended: true
 
-      - name: Build website
+      - name: Build site
         run: hugo --minify
 
       - name: Deploy to GitHub Pages
@@ -26,3 +33,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: gh-pages
