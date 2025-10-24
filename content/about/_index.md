@@ -6,6 +6,14 @@ draft = false
 
 # 👋 Xin chào, mình là **Nguyễn Ngọc Sang**
 
+---
+## 📷 Ảnh cá nhân
+
+<p align="center">
+  <img src="/images/avatar.jpg" alt="Ảnh cá nhân" width="220" style="border-radius: 50%;">
+</p>
+---
+
 - 🎓 Sinh viên lớp **22DTHC5 – Công nghệ Thông tin**
 - 💻 Quan tâm đến: *Lập trình mạng, Socket, RMI, Cloud Computing, Web Development*
 - 🧠 Kỹ năng:
@@ -20,15 +28,6 @@ draft = false
 
 - 🧑‍💻 [GitHub](https://github.com/sang6386)
 - ✉️ Email: [1120ngsang25@gmail.com](mailto:1120ngsang25@gmail.com)
-
----
-
-## 📷 Ảnh cá nhân
-
-<p align="center">
-  <img src="/images/avatar.jpg" alt="Ảnh cá nhân" width="220" style="border-radius: 50%;">
-</p>
-
 
 ---
 
