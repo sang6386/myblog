@@ -1,12 +1,18 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://sang6386.github.io/myblog/"
 languageCode = "vi"
 title = "My Blog - Sang"
 theme = "ananke"
+
+[pagination]
+  pagerSize = 10
 
 [params]
   author = "Sang"
   description = "Blog cá nhân chia sẻ về Lập trình mạng, Socket, RMI"
   github = "https://github.com/sang6386"
+  custom_css = ["css/custom.css"]
+  mainSections = ["posts"]
+  show_recent_posts = true
 
 [menu]
   [[menu.main]]
@@ -29,7 +35,6 @@ theme = "ananke"
     url = "/contact/"
     weight = 4
 
-# ✅ Cho phép HTML trong Markdown (để hiển thị <img>, <iframe>, v.v.)
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
