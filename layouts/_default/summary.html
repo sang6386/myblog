@@ -1,0 +1,22 @@
+<article class="bg-white shadow-sm rounded-2xl overflow-hidden mb4">
+  {{ with .Params.image }}
+  <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-100 h5 object-cover" />
+  {{ end }}
+
+  <div class="pa3">
+    <h2 class="f3 lh-title">
+      <a href="{{ .RelPermalink }}" class="link dim dark-blue">
+        {{ .Title }}
+      </a>
+    </h2>
+
+    <p class="f6 gray">
+      🗓️ {{ .Date.Format "02/01/2006" }}
+      {{ with .Params.tags }} | 🏷️ {{ delimit . ", " }} {{ end }}
+    </p>
+
+    {{ with .Params.description }}
+    <p class="lh-copy mt2">{{ . }}</p>
+    {{ end }}
+  </div>
+</article>
