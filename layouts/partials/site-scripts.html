@@ -1,0 +1,12 @@
+<!-- Nạp CSS custom -->
+<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+
+<!-- Nạp script dark mode -->
+<script src="{{ "js/darkmode.js" | relURL }}"></script>
+
+<!-- (Tùy chọn) Nếu sau này có thêm các script khác -->
+{{ if .Site.Params.custom_scripts }}
+  {{ range .Site.Params.custom_scripts }}
+    <script src="{{ . | relURL }}"></script>
+  {{ end }}
+{{ end }}

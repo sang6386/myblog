@@ -1,8 +1,8 @@
 body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.7;
-  background: #f9fafb;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #fafafa;
   color: #222;
+  line-height: 1.7;
 }
 
 article {
@@ -11,18 +11,175 @@ article {
 
 article:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-h2 a {
-  text-decoration: none;
-  color: #0077cc;
-}
-
-h2 a:hover {
-  color: #004499;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 img {
-  border-bottom: 2px solid #eee;
+  border-radius: 10px;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* 🌞 LIGHT MODE */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --card-bg: #f9f9f9;
+  --link-color: #1a73e8;
+}
+
+/* 🌚 DARK MODE */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --link-color: #8ab4f8;
+}
+
+/* ✅ Áp dụng các biến màu */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ✅ Cập nhật card bài viết */
+article, .bg-white {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ✅ Liên kết */
+a {
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+/* 🌗 Nút chuyển sáng/tối toàn site */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--link-color);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--link-color);
+  color: white;
+  transform: scale(1.1);
+}
+/* 🌐 Cấu hình cơ bản */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #fafafa;
+  color: #222;
+  line-height: 1.7;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* 🎴 Hiệu ứng bài viết */
+article {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* 🖼️ Ảnh minh họa */
+img {
+  border-radius: 10px;
+}
+
+/* 🔗 Liên kết */
+a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* 🌞 LIGHT MODE (mặc định) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --card-bg: #f9f9f9;
+  --link-color: #1a73e8;
+}
+
+/* 🌚 DARK MODE */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --link-color: #8ab4f8;
+}
+
+/* ✅ Áp dụng biến màu toàn site */
+html,
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+article,
+.bg-white {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color);
+}
+
+/* ✅ Liên kết tự đổi màu theo theme */
+a {
+  color: var(--link-color);
+}
+
+/* 🌗 Nút chuyển sáng/tối (góc phải dưới màn hình) */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  cursor: pointer;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--link-color);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--link-color);
+  color: #fff;
+  transform: scale(1.1);
 }

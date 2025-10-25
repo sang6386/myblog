@@ -1,8 +1,56 @@
-<footer class="pv4 ph3 ph5-m ph6-l mid-gray bt b--black-10">
-  <small class="f6 db tc">
-    © 2025 <b class="ttu">My Blog - Sang</b> — Tất cả các bài viết thuộc về tác giả.
+<footer class="pv5 ph3 ph5-m ph6-l mid-gray bt b--black-10" 
+        style="background: linear-gradient(135deg, #1e3c72, #2a5298); color: #f5f5f5; border-top-left-radius: 24px; border-top-right-radius: 24px; box-shadow: 0 -3px 10px rgba(0,0,0,0.2);">
+
+  <div class="tc mb3 fade-in-up">
+    <h2 class="f4 fw6 mb2">🌐 Kết nối cùng Nguyễn Ngọc Sang</h2>
+    <p class="f6 silver mt0">Full-stack Developer • Cloud • Distributed Systems</p>
+  </div>
+
+  <!-- Mạng xã hội -->
+  <div class="tc mt3 fade-in-up">
+    <a href="https://github.com/sang6386" target="_blank" class="mh2 link grow dim dib">
+      <img src="/images/icons/github-color.svg" width="32" alt="GitHub">
+    </a>
+    <a href="https://linkedin.com/in/sang6386" target="_blank" class="mh2 link grow dim dib">
+      <img src="/images/icons/linkedin-color.svg" width="32" alt="LinkedIn">
+    </a>
+    <a href="mailto:1120ngsang25@gmail.com" class="mh2 link grow dim dib">
+      <img src="/images/icons/mail-color.svg" width="32" alt="Email">
+    </a>
+  </div>
+
+  <small class="f6 db tc mt4 silver">
+    © 2025 <b class="ttu white">Nguyễn Ngọc Sang</b> — Powered by <a href="https://gohugo.io" class="white-70 dim">Hugo</a>
   </small>
 </footer>
 
-<!-- 🌙 Nút chuyển Dark/Light mode -->
+<!-- 🌗 Nút chuyển Dark/Light mode -->
 <script src="/js/theme-toggle.js"></script>
+
+<!-- 💫 Hiệu ứng xuất hiện -->
+<style>
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s ease-in-out forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer a img {
+  transition: transform 0.25s ease, filter 0.3s ease;
+}
+footer a:hover img {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+footer h2 {
+  letter-spacing: 0.5px;
+}
+
+footer small {
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+</style>

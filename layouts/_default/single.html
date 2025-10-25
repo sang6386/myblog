@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article class="post">
+  <header class="mb4">
+    <h1 class="f2 fw6 lh-title">{{ .Title }}</h1>
+    <p class="f6 gray mt0 mb3">
+      📅 {{ .Date.Format "02/01/2006" }}
+      {{ with .Params.tags }} — 🏷️ {{ delimit . ", " }} {{ end }}
+    </p>
+    {{ if .Params.image }}
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="br3 w-100 mb4">
+    {{ end }}
+  </header>
+
+  <section class="content">
+    {{ .Content }}
+  </section>
+
+  <section id="comments" class="mt5">
+  <script src="https://utteranc.es/client.js"
+          repo="sang6386/myblog-comments"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+  <script>
+    window.addEventListener('load', function() {
+      const iframe = document.querySelector('iframe.utterances-frame');
+      if (!iframe) return;
+
+      const theme = localStorage.getItem('theme') || 'light'; // Lấy theme từ toggle site
+      const message = {
+        type: 'set-theme',
+        theme: theme === 'dark' ? 'github-dark' : 'github-light'
+      };
+
+      iframe.onload = () => iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    });
+  </script>
+</section>
+
+</article>
+{{ end }}

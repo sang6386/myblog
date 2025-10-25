@@ -1,0 +1,92 @@
+{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+{{ if $featured_image }}
+  <header class="relative overflow-hidden">
+    <div class="bg-cover bg-center" style="background-image: url('{{ $featured_image }}'); position: relative;">
+      <div class="bg-gradient-to-b from-[#1e3c72cc] to-[#2a5298cc] backdrop-blur-sm">
+        {{ partial "site-navigation.html" . }}
+        <div class="tc-l pv5 pv6-l ph3 ph4-ns fade-in-down">
+          <h1 class="f2 f-subheadline-l fw6 white mb2 lh-title tracking-tight">
+            {{ .Title | default .Site.Title }}
+          </h1>
+          {{ with .Params.description }}
+            <h2 class="fw3 f5 f3-l white-80 measure-wide-l center mt2">
+              {{ . }}
+            </h2>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </header>
+{{ else }}
+  <header class="relative">
+    <div class="pb3-m pb6-l bg-gradient-to-r from-[#1e3c72] to-[#2a5298] backdrop-blur-md shadow-md">
+      {{ partial "site-navigation.html" . }}
+      <div class="tc-l pv4 ph3 ph4-ns fade-in-down">
+        <h1 class="f2 f-subheadline-l fw6 white mb2 lh-title tracking-tight">
+          {{ .Title | default .Site.Title }}
+        </h1>
+        {{ with .Params.description }}
+          <h2 class="fw3 f5 f3-l white-80 measure-wide-l center mt2 mb4">
+            {{ . }}
+          </h2>
+        {{ end }}
+      </div>
+    </div>
+  </header>
+{{ end }}
+
+<style>
+/* 🌈 Hiệu ứng xuất hiện nhẹ */
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-15px);
+  animation: fadeDown 0.8s ease-in-out forwards;
+}
+@keyframes fadeDown {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🧭 Thanh điều hướng cố định + nền mờ */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgba(30, 60, 114, 0.8);
+  transition: all 0.4s ease;
+}
+
+/* Hover hiện underline công nghệ */
+nav a {
+  color: #e6e6e6;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #a8edea, #fed6e3);
+  transition: width 0.3s ease;
+}
+nav a:hover {
+  color: white;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Responsive cải thiện */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header h2 {
+    font-size: 1rem;
+  }
+}
+</style>

@@ -1,27 +1,46 @@
 {{ define "main" }}
-  <section class="pa3 pa4-ns">
-    <h1 class="f2 tc">📰 Bài viết mới nhất</h1>
-    <div class="flex-ns flex-wrap justify-around mt4">
-      {{ $posts := where .Site.RegularPages "Section" "posts" }}
-      {{ range $posts }}
-        <article class="w-100 w-30-l mb4 pa3 bg-white br3 shadow-1 hover-bg-near-white transition-all">
-          {{ if .Params.image }}
-            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="br2 w-100 mb2" loading="lazy">
-          {{ end }}
-          <h2 class="f4 fw6 lh-title">
-            <a href="{{ .RelPermalink }}" class="link dark-blue hover-mid-gray">
-              {{ .Title }}
-            </a>
-          </h2>
-          <p class="f6 gray mt0 mb2">
-            📅 {{ .Date.Format "02/01/2006" }}
-            {{ with .Params.tags }} — 🏷️ {{ delimit . ", " }} {{ end }}
-          </p>
-          <p class="lh-copy measure">
-            {{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
-          </p>
-        </article>
-      {{ end }}
+<section class="index-section">
+
+  <!-- 🌟 Hero với gradient + particle -->
+  <div class="hero fade-scroll" id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <h1>Chào mừng đến với Blog Công Nghệ</h1>
+      <p>Cập nhật bài viết mới nhất về lập trình, công nghệ & hệ thống.</p>
     </div>
-  </section>
+  </div>
+
+  <!-- 🌟 Tags Filter -->
+  <div class="tags-filter fade-scroll">
+    <button class="tag-btn active" data-tag="all">Tất cả</button>
+    {{ range $tag, $_ := .Site.Taxonomies.tags }}
+      <button class="tag-btn" data-tag="{{ $tag }}">{{ $tag }}</button>
+    {{ end }}
+  </div>
+
+  <!-- 🌟 Posts Grid -->
+  <div class="posts-grid fade-scroll">
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    {{ range $posts }}
+      <div class="post-card fade-scroll" data-tags="{{ delimit .Params.tags "," }}">
+        {{ if .Params.image }}
+          <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+        {{ end }}
+        <h3>{{ .Title }}</h3>
+        <p class="date">{{ .Date.Format "02/01/2006" }}</p>
+        {{ with .Params.tags }}
+          <p class="tags">🏷️ {{ delimit . ", " }}</p>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" class="btn-card">Xem chi tiết</a>
+      </div>
+    {{ end }}
+  </div>
+
+</section>
+
+<!-- 🌟 CSS & JS riêng -->
+<link rel="stylesheet" href="/css/main.css">
+<script src="/js/tag-filter.js" defer></script>
+<script src="/js/fade-scroll.js" defer></script>
+<script src="/js/hero-particles.js" defer></script>
 {{ end }}

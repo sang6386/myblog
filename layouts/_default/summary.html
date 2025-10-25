@@ -1,22 +1,28 @@
-<article class="bg-white shadow-sm rounded-2xl overflow-hidden mb4">
-  {{ with .Params.image }}
-  <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-100 h5 object-cover" />
+<article class="bg-white br3 pa3 pa4-ns mv3 ba b--black-10 shadow-sm hover-bg-near-white transition-all">
+  {{ if .Params.image }}
+    <div class="mb3">
+      <img src="{{ .Params.image }}" alt="{{ .Title }}" class="br2 w-100" loading="lazy">
+    </div>
   {{ end }}
-
-  <div class="pa3">
-    <h2 class="f3 lh-title">
-      <a href="{{ .RelPermalink }}" class="link dim dark-blue">
-        {{ .Title }}
-      </a>
-    </h2>
-
-    <p class="f6 gray">
-      🗓️ {{ .Date.Format "02/01/2006" }}
-      {{ with .Params.tags }} | 🏷️ {{ delimit . ", " }} {{ end }}
-    </p>
-
-    {{ with .Params.description }}
-    <p class="lh-copy mt2">{{ . }}</p>
+  
+  <h2 class="f3 fw6 lh-title">
+    <a href="{{ .RelPermalink }}" class="link dark-blue hover-mid-gray">
+      {{ .Title }}
+    </a>
+  </h2>
+  
+  <p class="f6 gray mt0">
+    📅 {{ .Date.Format "02/01/2006" }}
+    {{ with .Params.tags }}
+      — 🏷️ {{ delimit . ", " }}
     {{ end }}
-  </div>
+  </p>
+
+  {{ if .Params.description }}
+    <p class="lh-copy measure">
+      {{ .Params.description }}
+    </p>
+  {{ else }}
+    <p>{{ .Summary }}</p>
+  {{ end }}
 </article>

@@ -1,0 +1,64 @@
+{{ define "main" }}
+<section class="flex justify-center items-center min-vh-100 bg-near-white">
+  <div class="w-90 w-60-ns bg-white br3 shadow-4 pa4 pa5-ns fade-in">
+    
+    <!-- Ảnh đại diện -->
+    <div class="tc mb4">
+      {{ with .Params.image }}
+        <img src="{{ . | relURL }}" alt="Ảnh cá nhân" 
+             class="br-100 h5 w5 shadow-4 grow" 
+             style="object-fit: cover; transition: transform 0.3s;">
+      {{ end }}
+      <h1 class="f2 fw6 mt3 mb2">{{ .Title }}</h1>
+      <p class="gray f5">Sinh viên lớp <strong>22DTHC5</strong> – Ngành <em>Công nghệ Thông tin</em></p>
+    </div>
+
+    <!-- Nội dung -->
+    <div class="lh-copy f4 measure-wide center mb4">
+      {{ .Content }}
+    </div>
+
+    <!-- Liên kết mạng xã hội -->
+    <div class="tc mt4">
+      {{ with .Params.github }}
+        <a href="{{ . }}" target="_blank" class="mh2 grow dim dib">
+          <img src="{{ "images/icons/github.svg" | relURL }}" width="32" alt="GitHub">
+        </a>
+      {{ end }}
+      {{ with .Params.linkedin }}
+        <a href="{{ . }}" target="_blank" class="mh2 grow dim dib">
+          <img src="{{ "images/icons/linkedin.svg" | relURL }}" width="32" alt="LinkedIn">
+        </a>
+      {{ end }}
+      {{ with .Params.email }}
+        <a href="mailto:{{ . }}" class="mh2 grow dim dib">
+          <img src="{{ "images/icons/mail.svg" | relURL }}" width="32" alt="Email">
+        </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<style>
+/* Hiệu ứng fade-in khi load */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.9s ease-in forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hiệu ứng hover ảnh */
+img.grow:hover {
+  transform: scale(1.05);
+}
+
+/* Màu nền tổng thể nhẹ nhàng */
+body {
+  background: #f5f7fa;
+}
+</style>
+{{ end }}
+
