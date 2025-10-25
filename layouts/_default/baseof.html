@@ -76,7 +76,7 @@
     {{- template "_internal/schema.html" . -}}
     {{- template "_internal/twitter_cards.html" . -}}
 
-    <!-- Google Analytics -->
+    <!-- 🌟 Google Analytics -->
     {{ if hugo.IsProduction }}
       {{ template "_internal/google_analytics.html" . }}
     {{ end }}
@@ -108,8 +108,8 @@
     <!-- 🌟 Scripts -->
     <script src="{{ "js/darkmode.js" | relURL }}" defer></script>
     <script src="{{ "js/tag-filter.js" | relURL }}" defer></script>
-    <script src="{{ "js/fade-in-scroll.js" | relURL }}" defer></script>
+    <script src="{{ "js/fade-scroll.js" | relURL }}" defer></script>
+    <script src="{{ "js/hero-particles.js" | relURL }}" defer></script>
 
   </body>
 </html>
-

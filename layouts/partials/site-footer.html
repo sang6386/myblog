@@ -1,0 +1,49 @@
+<footer class="site-footer glass pa4 mt5 flex flex-wrap justify-between items-center">
+  <div class="footer-left">
+    <p class="f7 gray">&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+  </div>
+
+  <div class="footer-right flex items-center">
+    <!-- Social Icons (ví dụ) -->
+    <a href="https://twitter.com/" target="_blank" class="footer-link mh2 neon-btn">Twitter</a>
+    <a href="https://github.com/" target="_blank" class="footer-link mh2 neon-btn">GitHub</a>
+    <a href="mailto:info@example.com" class="footer-link mh2 neon-btn">Email</a>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
+  flex-wrap: wrap;
+}
+
+/* Footer neon buttons */
+.neon-btn {
+  background: linear-gradient(90deg, #00ffff, #764ba2);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  text-shadow:0 0 5px #fff;
+  box-shadow:0 0 10px #00ffff;
+  transition: all 0.3s ease;
+}
+.neon-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00aaff,0 0 30px #00ffff;
+}
+
+/* Footer links */
+.footer-link { margin: 0 0.5rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-right { margin-top: 1rem; }
+}
+</style>
