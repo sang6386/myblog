@@ -23,9 +23,9 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;     
-  text-align: center;
+  justify-content: center; /* căn giữa theo chiều dọc */
+  align-items: center;     /* căn giữa theo chiều ngang */
+  text-align: center;      /* text căn giữa */
   height: 80vh;
   overflow: hidden;
   color: #0ff;
@@ -76,7 +76,7 @@ body {
 /* ===================== POSTS GRID ===================== */
 .posts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 cột responsive */
   gap: 2rem;
   padding: 2rem 1rem;
   justify-items: center; /* căn giữa từng card */
@@ -87,10 +87,14 @@ body {
   backdrop-filter: blur(10px);
   border-radius: 1rem;
   padding: 1rem;
-  text-align: center;
+  text-align: center; /* card nội dung căn giữa */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 350px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; /* nội dung card trải đều */
+  min-height: 400px; /* tất cả card đồng đều chiều cao */
 }
 
 .post-card:hover {
@@ -107,9 +111,9 @@ body {
 .tags-filter {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap:0.5rem;
-  margin-bottom:2rem;
+  justify-content: center; /* căn giữa nút filter */
+  gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .tag-btn {
