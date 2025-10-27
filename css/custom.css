@@ -1,32 +1,21 @@
+/* =================== 🌐 BASE THEME =================== */
+
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   background-color: #fafafa;
   color: #222;
   line-height: 1.7;
-}
-
-article {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-article:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-img {
-  border-radius: 10px;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 a {
   color: #0066cc;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
 
 /* 🌞 LIGHT MODE */
 :root {
@@ -44,27 +33,18 @@ a:hover {
   --link-color: #8ab4f8;
 }
 
-/* ✅ Áp dụng các biến màu */
-body {
+/* Áp dụng màu toàn trang */
+html, body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* ✅ Cập nhật card bài viết */
 article, .bg-white {
   background-color: var(--card-bg) !important;
   color: var(--text-color);
-  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* ✅ Liên kết */
-a {
-  color: var(--link-color);
-  transition: color 0.3s ease;
-}
-
-/* 🌗 Nút chuyển sáng/tối toàn site */
+/* 🌗 Nút chuyển sáng/tối */
 .theme-toggle {
   position: fixed;
   bottom: 20px;
@@ -84,102 +64,144 @@ a {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
-
 .theme-toggle:hover {
   background: var(--link-color);
   color: white;
   transform: scale(1.1);
 }
-/* 🌐 Cấu hình cơ bản */
+
+/* =================== ⚡ CYBERPUNK NEON STYLE =================== */
+
+/* 💠 Nền lưới neon động */
 body {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  background-color: #fafafa;
-  color: #222;
-  line-height: 1.7;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  background: radial-gradient(circle at top, #021027 0%, #000 100%);
+  color: #e0f7ff;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
 }
-
-/* 🎴 Hiệu ứng bài viết */
-article {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-article:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-/* 🖼️ Ảnh minh họa */
-img {
-  border-radius: 10px;
-}
-
-/* 🔗 Liên kết */
-a {
-  color: #0066cc;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* 🌞 LIGHT MODE (mặc định) */
-:root {
-  --bg-color: #ffffff;
-  --text-color: #222222;
-  --card-bg: #f9f9f9;
-  --link-color: #1a73e8;
-}
-
-/* 🌚 DARK MODE */
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --card-bg: #1e1e1e;
-  --link-color: #8ab4f8;
-}
-
-/* ✅ Áp dụng biến màu toàn site */
-html,
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-article,
-.bg-white {
-  background-color: var(--card-bg) !important;
-  color: var(--text-color);
-}
-
-/* ✅ Liên kết tự đổi màu theo theme */
-a {
-  color: var(--link-color);
-}
-
-/* 🌗 Nút chuyển sáng/tối (góc phải dưới màn hình) */
-.theme-toggle {
+body::before {
+  content: "";
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  cursor: pointer;
-  background: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid var(--link-color);
-  border-radius: 50%;
-  width: 46px;
-  height: 46px;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveGrid 10s linear infinite;
+  z-index: -1;
+  opacity: 0.4;
+}
+@keyframes moveGrid {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 40px 40px, 40px 40px; }
 }
 
-.theme-toggle:hover {
-  background: var(--link-color);
+/* =================== 🎴 CARD BÀI VIẾT =================== */
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* CARD cơ bản */
+.post-card {
+  background: rgba(10, 10, 20, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  color: #e0f7ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  height: 440px; /* ✅ Cố định chiều cao */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ✨ Viền neon chạy quanh */
+.post-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, #00f0ff, #ff00c8, #00f0ff);
+  background-size: 400% 400%;
+  border-radius: 12px;
+  animation: neonBorder 5s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 0;
+}
+.post-card:hover::before { opacity: 1; }
+
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌈 Glow tổng thể khi hover */
+.post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* =================== 🔤 NỘI DUNG TRONG CARD =================== */
+
+.post-title {
+  font-size: 1.3rem;
+  color: #00ffff;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 2;
+}
+.post-meta {
+  font-size: 0.9rem;
+  color: #b0c4de;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Giới hạn tóm tắt */
+.post-summary {
+  font-size: 1rem;
+  color: #e0f7ff;
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* ✅ Hiển thị tối đa 5 dòng */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+}
+
+/* =================== 🔘 NÚT XEM THÊM NEON =================== */
+
+.neon-btn {
+  display: inline-block;
+  align-self: flex-start;
+  text-align: center;
   color: #fff;
-  transform: scale(1.1);
+  border: 2px solid #00ffff;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #00ffff;
+  margin-top: 12px;
+  position: relative;
+  z-index: 2;
+}
+.neon-btn:hover {
+  color: #0ff;
+  box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+  border-color: #ff00ff;
+  transform: scale(1.05);
 }

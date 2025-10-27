@@ -1,82 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JavaScript on My Blog - Sang</title><link>https://sang6386.github.io/myblog/tags/javascript/</link><description>Recent content in JavaScript on My Blog - Sang</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://sang6386.github.io/myblog/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>JavaScript Essentials 1 – DOM và Event</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-1_3/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-1_3/</guid><description>&lt;h1 id="-javascript-essentials-1--dom-và-event"&gt;💻 JavaScript Essentials 1 – DOM và Event&lt;/h1&gt;
-&lt;p&gt;Bài học này giúp bạn &lt;strong&gt;tương tác với trang web&lt;/strong&gt; bằng cách thao tác DOM và xử lý sự kiện. Đây là bước quan trọng trước khi học framework như React, Vue hay Angular.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id="-1-dom-document-object-model"&gt;🧩 1. DOM (Document Object Model)&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;DOM&lt;/strong&gt; là cấu trúc cây đại diện cho HTML trong trình duyệt.&lt;br&gt;
-Các node DOM bao gồm &lt;strong&gt;elements&lt;/strong&gt;, &lt;strong&gt;attributes&lt;/strong&gt;, và &lt;strong&gt;text&lt;/strong&gt;.&lt;/p&gt;
-&lt;h3 id="-thao-tác-dom-cơ-bản"&gt;🔹 Thao tác DOM cơ bản&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Lấy element theo ID
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;heroTitle&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; document.&lt;span style="color:#a6e22e"&gt;getElementById&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;hero-title&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;heroTitle&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;textContent&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Chào mừng đến với Blog!&amp;#34;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Lấy elements theo class
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;buttons&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; document.&lt;span style="color:#a6e22e"&gt;getElementsByClassName&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;btn-card&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Lặp qua NodeList
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;Array.&lt;span style="color:#a6e22e"&gt;from&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;buttons&lt;/span&gt;).&lt;span style="color:#a6e22e"&gt;forEach&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;btn&lt;/span&gt; =&amp;gt; &lt;span style="color:#a6e22e"&gt;btn&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;style&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;border&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;2px solid cyan&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="-thêm--xóa--thay-đổi-element"&gt;🔹 Thêm / Xóa / Thay đổi element&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Tạo element mới
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;newPara&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; document.&lt;span style="color:#a6e22e"&gt;createElement&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;p&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;newPara&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;textContent&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Đây là đoạn text mới thêm vào DOM.&amp;#34;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;document.&lt;span style="color:#a6e22e"&gt;body&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;appendChild&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;newPara&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Xóa element
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;oldPara&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; document.&lt;span style="color:#a6e22e"&gt;querySelector&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;.old-text&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;oldPara&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;remove&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;// Thay đổi style trực tiếp
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;&lt;/span&gt;&lt;span style="color:#a6e22e"&gt;heroTitle&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;style&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;color&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;#0ff&amp;#34;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e22e"&gt;heroTitle&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;style&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;textShadow&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;0 0 10px #0ff&amp;#34;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="-2-event-handling-xử-lý-sự-kiện"&gt;🧩 2. Event Handling (Xử lý sự kiện)&lt;/h2&gt;
-&lt;p&gt;Event là hành vi của người dùng (click, hover, input, submit).&lt;/p&gt;</description></item><item><title>JavaScript Essentials 2 (Phần 1) — Hàm nâng cao, Scope và Closure</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-2_1/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-2_1/</guid><description>&lt;h1 id="-javascript-essentials-2--hàm-nâng-cao-scope-và-closure"&gt;🧠 JavaScript Essentials 2 — Hàm nâng cao, Scope và Closure&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JavaScript on My Blog - Sang</title><link>https://sang6386.github.io/myblog/tags/javascript/</link><description>Recent content in JavaScript on My Blog - Sang</description><generator>Hugo</generator><language>vi</language><lastBuildDate>Sun, 26 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://sang6386.github.io/myblog/tags/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>JavaScript Essentials 2 – Asynchronous và Fetch API</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-2_3/</link><pubDate>Sun, 26 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-2_3/</guid><description>&lt;h1 id="-javascript-essentials-2--asynchronous-và-fetch-api"&gt;💻 JavaScript Essentials 2 – Asynchronous và Fetch API&lt;/h1&gt;
+&lt;p&gt;Hiểu &lt;strong&gt;bất đồng bộ (Asynchronous)&lt;/strong&gt; giúp xử lý dữ liệu từ server hiệu quả, tránh block UI, và là nền tảng cho SPA (Single Page Application).&lt;/p&gt;</description></item><item><title>JavaScript Essentials 1 – DOM và Event</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-1_3/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-1_3/</guid><description>&lt;h1 id="-javascript-essentials-1--dom-và-event"&gt;💻 JavaScript Essentials 1 – DOM và Event&lt;/h1&gt;
+&lt;p&gt;Bài học này giúp bạn &lt;strong&gt;tương tác với trang web&lt;/strong&gt; bằng cách thao tác DOM và xử lý sự kiện. Đây là bước quan trọng trước khi học framework như React, Vue hay Angular.&lt;/p&gt;</description></item><item><title>JavaScript Essentials 2 (Phần 1) — Hàm nâng cao, Scope và Closure</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-2_1/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-2_1/</guid><description>&lt;h1 id="-javascript-essentials-2--hàm-nâng-cao-scope-và-closure"&gt;🧠 JavaScript Essentials 2 — Hàm nâng cao, Scope và Closure&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Tóm tắt:&lt;/strong&gt;&lt;br&gt;
 Đây là bài học chuyên sâu thuộc khóa &lt;strong&gt;JavaScript Essentials 2&lt;/strong&gt; trên &lt;strong&gt;Cisco Networking Academy&lt;/strong&gt;,&lt;br&gt;
 tập trung vào 3 khái niệm nền tảng giúp bạn hiểu cơ chế vận hành nội bộ của JavaScript:&lt;br&gt;
 &lt;strong&gt;Hàm nâng cao (Advanced Functions)&lt;/strong&gt;, &lt;strong&gt;Phạm vi (Scope)&lt;/strong&gt;, và &lt;strong&gt;Closure (Bao đóng)&lt;/strong&gt;.&lt;br&gt;
-Nếu nắm vững chúng, bạn đã đi được nửa chặng đường để trở thành &lt;strong&gt;Front-end Developer chuyên nghiệp&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>JavaScript Essentials 1(Phần 2) — Biểu thức, Toán tử và Cấu trúc điều kiện</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-1_2/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-1_2/</guid><description>&lt;h1 id="-javascript-essentials-1--biểu-thức-toán-tử-và-cấu-trúc-điều-kiện-chuyên-sâu"&gt;⚙️ JavaScript Essentials 1 — Biểu thức, Toán tử và Cấu trúc điều kiện (Chuyên sâu)&lt;/h1&gt;
+Nếu nắm vững chúng, bạn đã đi được nửa chặng đường để trở thành &lt;strong&gt;Front-end Developer chuyên nghiệp&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>JavaScript Essentials 1(Phần 2) — Biểu thức, Toán tử và Cấu trúc điều kiện</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-1_2/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-1_2/</guid><description>&lt;h1 id="-javascript-essentials-1--biểu-thức-toán-tử-và-cấu-trúc-điều-kiện-chuyên-sâu"&gt;⚙️ JavaScript Essentials 1 — Biểu thức, Toán tử và Cấu trúc điều kiện (Chuyên sâu)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Tóm tắt:&lt;/strong&gt;
 Bài viết này giúp bạn hiểu sâu về cách JavaScript &lt;strong&gt;tính toán biểu thức&lt;/strong&gt;, &lt;strong&gt;vận hành toán tử&lt;/strong&gt;, và &lt;strong&gt;điều khiển luồng chương trình&lt;/strong&gt; qua cấu trúc điều kiện.&lt;br&gt;
 Dựa theo khóa học &lt;em&gt;JavaScript Essentials 1&lt;/em&gt; trên Cisco Networking Academy.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id="-mục-lục"&gt;📘 Mục lục&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="#gi%E1%BB%9Bi-thi%E1%BB%87u"&gt;Giới thiệu&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#bi%E1%BB%83u-th%E1%BB%A9c-expressions"&gt;Biểu thức (Expressions)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#to%C3%A1n-t%E1%BB%AD-operators"&gt;Toán tử (Operators)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#c%E1%BA%A5u-tr%C3%BAc-%C4%91i%E1%BB%81u-ki%E1%BB%87n-conditional-structures"&gt;Cấu trúc điều kiện (Conditional Structures)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#b%C3%A0i-t%E1%BA%ADp-th%E1%BB%B1c-h%C3%A0nh-nh%E1%BB%8F"&gt;Bài tập thực hành nhỏ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#t%E1%BB%95ng-k%E1%BA%BFt"&gt;Tổng kết&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id="-giới-thiệu"&gt;🔹 Giới thiệu&lt;/h2&gt;
-&lt;p&gt;Trong lập trình, &lt;strong&gt;biểu thức&lt;/strong&gt; là công cụ biểu diễn logic và biến đổi dữ liệu, còn &lt;strong&gt;toán tử&lt;/strong&gt; là hành động thực hiện trên các giá trị.&lt;br&gt;
-&lt;strong&gt;Cấu trúc điều kiện&lt;/strong&gt; giúp điều hướng luồng chương trình tùy theo các tình huống cụ thể.&lt;br&gt;
-Hiểu đúng cơ chế hoạt động giúp code &lt;strong&gt;hiệu quả&lt;/strong&gt;, &lt;strong&gt;an toàn&lt;/strong&gt; và &lt;strong&gt;dễ bảo trì&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>JavaScript Essentials 2 (Phần 2) — Đối tượng, Mảng và Lập trình Hướng Đối tượng (OOP)</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-2_2/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-2_2/</guid><description>&lt;h1 id="-javascript-essentials-2--đối-tượng-mảng-và-lập-trình-hướng-đối-tượng-oop"&gt;🧩 JavaScript Essentials 2 — Đối tượng, Mảng và Lập trình Hướng Đối Tượng (OOP)&lt;/h1&gt;
+&lt;/blockquote&gt;</description></item><item><title>JavaScript Essentials 2 (Phần 2) — Đối tượng, Mảng và Lập trình Hướng Đối tượng (OOP)</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-2_2/</link><pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-2_2/</guid><description>&lt;h1 id="-javascript-essentials-2--đối-tượng-mảng-và-lập-trình-hướng-đối-tượng-oop"&gt;🧩 JavaScript Essentials 2 — Đối tượng, Mảng và Lập trình Hướng Đối Tượng (OOP)&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Tóm tắt:&lt;/strong&gt;&lt;br&gt;
 Trong phần 2 của khóa &lt;strong&gt;JavaScript Essentials 2 (Cisco Networking Academy)&lt;/strong&gt;,&lt;br&gt;
 bạn sẽ học cách &lt;strong&gt;tổ chức dữ liệu bằng Object và Array&lt;/strong&gt;, và xây dựng chương trình có cấu trúc rõ ràng nhờ &lt;strong&gt;Lập trình Hướng Đối Tượng (OOP)&lt;/strong&gt;.&lt;br&gt;
-Đây là kỹ năng bắt buộc cho bất kỳ lập trình viên web hoặc full-stack nào.&lt;/p&gt;</description></item><item><title>JavaScript Essentials 1 (Phần 1) — Biến, Hàm và Luồng điều khiển</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-1_1/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-1_1/</guid><description>&lt;h1 id="-javascript-essentials-1--biến-hàm-và-luồng-điều-khiển"&gt;💻 JavaScript Essentials 1 — Biến, Hàm và Luồng điều khiển&lt;/h1&gt;
+Đây là kỹ năng bắt buộc cho bất kỳ lập trình viên web hoặc full-stack nào.&lt;/p&gt;
+&lt;/blockquote&gt;</description></item><item><title>JavaScript Essentials 1 (Phần 1) — Biến, Hàm và Luồng điều khiển</title><link>https://sang6386.github.io/myblog/posts/javascript-essentials-1_1/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://sang6386.github.io/myblog/posts/javascript-essentials-1_1/</guid><description>&lt;h1 id="-javascript-essentials-1--biến-hàm-và-luồng-điều-khiển"&gt;💻 JavaScript Essentials 1 — Biến, Hàm và Luồng điều khiển&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Tóm tắt:&lt;/strong&gt;&lt;br&gt;
 Bài viết này tổng hợp và phân tích nội dung trọng tâm từ khóa học &lt;strong&gt;JavaScript Essentials 1&lt;/strong&gt; của &lt;strong&gt;Cisco Networking Academy&lt;/strong&gt;, tập trung vào 3 nền tảng:&lt;br&gt;
 &lt;strong&gt;Biến (Variables)&lt;/strong&gt; – nơi lưu trữ dữ liệu,&lt;br&gt;
 &lt;strong&gt;Hàm (Functions)&lt;/strong&gt; – cách tái sử dụng logic,&lt;br&gt;
 &lt;strong&gt;Luồng điều khiển (Control Flow)&lt;/strong&gt; – điều hướng chương trình.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id="-mục-lục"&gt;📘 Mục lục&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="#javascript-l%C3%A0-g%C3%AC"&gt;JavaScript là gì?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#bi%E1%BA%BFn-v%C3%A0-ki%E1%BB%83u-d%E1%BB%AF-li%E1%BB%87u"&gt;Biến và Kiểu dữ liệu&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#h%C3%A0m-functions"&gt;Hàm (Functions)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#lu%E1%BB%93ng-%C4%91i%E1%BB%81u-khi%E1%BB%83n-control-flow"&gt;Luồng điều khiển (Control Flow)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#b%C3%A0i-t%E1%BA%ADp-minh-h%E1%BB%8Da"&gt;Bài tập minh họa&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#t%E1%BB%95ng-k%E1%BA%BFt--best-practices"&gt;Tổng kết &amp;amp; Best Practices&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id="-1-javascript-là-gì"&gt;🧭 1. JavaScript là gì?&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;JavaScript (JS)&lt;/strong&gt; là ngôn ngữ lập trình &lt;em&gt;động&lt;/em&gt;, chạy trực tiếp trên trình duyệt, cho phép trang web tương tác với người dùng theo thời gian thực.&lt;/p&gt;</description></item></channel></rss>
+&lt;/blockquote&gt;</description></item></channel></rss>
