@@ -11,7 +11,7 @@ categories = ["Lập trình mạng"]
 Khóa học này giúp bạn hiểu **Virtual LAN (VLAN)**, các loại switch (Layer 2/3), và kỹ thuật cấu hình switch nâng cao trong doanh nghiệp.  
 Bài viết phù hợp cho học viên **Cisco Networking Academy** muốn thực hành setup mạng chuyên nghiệp.
 
----
+<!--more-->
 
 ## 🧩 1. VLAN là gì?
 

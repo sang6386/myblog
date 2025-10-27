@@ -15,7 +15,7 @@ description = "Tổng quan toàn diện về biến, hàm và luồng điều kh
 > **Hàm (Functions)** – cách tái sử dụng logic,  
 > **Luồng điều khiển (Control Flow)** – điều hướng chương trình.  
 
----
+<!--more-->
 
 ## 📘 Mục lục
 1. [JavaScript là gì?](#javascript-là-gì)  

@@ -14,7 +14,7 @@ description = "Hiểu sâu về Object, Array và lập trình hướng đối t
 > bạn sẽ học cách **tổ chức dữ liệu bằng Object và Array**, và xây dựng chương trình có cấu trúc rõ ràng nhờ **Lập trình Hướng Đối Tượng (OOP)**.  
 > Đây là kỹ năng bắt buộc cho bất kỳ lập trình viên web hoặc full-stack nào.
 
----
+<!--more-->
 
 ## 📘 Mục lục
 

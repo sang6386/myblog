@@ -10,7 +10,7 @@ categories = ["Lập trình web"]
 
 Bài học này giúp bạn **tương tác với trang web** bằng cách thao tác DOM và xử lý sự kiện. Đây là bước quan trọng trước khi học framework như React, Vue hay Angular.
 
----
+<!--more-->
 
 ## 🧩 1. DOM (Document Object Model)
 

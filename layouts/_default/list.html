@@ -1,21 +1,32 @@
 {{ define "main" }}
-  <article class="pa3 pa4-ns nested-copy-line-height">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links {{ $.Param "text_color" | default "mid-gray" }}">
+  <article class="pa3 pa4-ns">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy">
       {{ .Content }}
     </section>
 
-    {{/* ✅ Sử dụng đúng section "posts" và phân trang */}}
     {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
 
-    <section class="flex-ns mt5 flex-wrap justify-around">
-      {{ range $paginator.Pages }}
-        <div class="w-100 w-30-l mb4 relative bg-white">
-          {{ .Render "summary" }}
-        </div>
-      {{ end }}
-    </section>
+    <section class="post-grid">
+  {{ range $paginator.Pages }}
+    <div class="post-card">
+      <h2 class="post-title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h2>
+      <p class="post-meta">
+        🖋️ {{ with .Params.author }}{{ . }}{{ else }}Tác giả{{ end }} • 📅 {{ .Date.Format "02 Jan 2006" }}
+      </p>
 
-    {{/* ✅ Hiển thị điều hướng phân trang (nếu có) */}}
+      {{ if .Params.description }}
+        <p class="post-summary">{{ .Params.description }}</p>
+      {{ else }}
+        <p class="post-summary">{{ .Summary }}</p>
+      {{ end }}
+
+      <a href="{{ .RelPermalink }}" class="neon-btn">Xem thêm →</a>
+    </div>
+  {{ end }}
+</section>
+
     {{ template "_internal/pagination.html" $paginator }}
   </article>
 {{ end }}

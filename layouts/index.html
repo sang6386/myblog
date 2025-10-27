@@ -18,24 +18,20 @@
     {{ end }}
   </div>
 
-  <!-- 🌟 Posts Grid -->
-  <div class="posts-grid fade-scroll">
-    {{ $posts := where .Site.RegularPages "Section" "posts" }}
-    {{ range $posts }}
-      <div class="post-card fade-scroll" data-tags="{{ delimit .Params.tags "," }}">
-        {{ if .Params.image }}
-          <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
-        {{ end }}
-        <h3>{{ .Title }}</h3>
-        <p class="date">{{ .Date.Format "02/01/2006" }}</p>
-        {{ with .Params.tags }}
-          <p class="tags">🏷️ {{ delimit . ", " }}</p>
-        {{ end }}
-        <a href="{{ .RelPermalink }}" class="btn-card">Xem chi tiết</a>
-      </div>
-    {{ end }}
-  </div>
-
+  <section class="post-grid fade-scroll">
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ range first 9 $posts }} <!-- Hiển thị 9 bài mới nhất -->
+    <article class="post-card" data-tags="{{ delimit .Params.tags "," }}">
+      {{ if .Params.image }}
+        <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy" class="post-image">
+      {{ end }}
+      <h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+      <p class="post-meta">🖋️ {{ .Params.author }} • 📅 {{ .Date.Format "02 Jan 2006" }}</p>
+      <p class="post-summary">{{ .Summary }}</p>
+      <a href="{{ .RelPermalink }}" class="btn-card">Đọc thêm →</a>
+    </article>
+  {{ end }}
+</section>
 </section>
 
 <!-- 🌟 CSS & JS -->

@@ -58,6 +58,10 @@
     {{ partials.Include "site-style.html" . }}
     {{ partials.Include "site-scripts.html" . }}
 
+    <!-- 🌈 Custom Cyberpunk Theme -->
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- 🌟 Favicon -->
     {{ block "favicon" . }}
       {{ partials.IncludeCached "site-favicon.html" . }}

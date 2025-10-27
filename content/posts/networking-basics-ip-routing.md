@@ -11,7 +11,7 @@ categories = ["Lập trình mạng"]
 Hiểu cách **địa chỉ IP hoạt động** và **routing** giúp thiết lập mạng nội bộ và kết nối Internet.  
 Bài viết này sẽ hướng dẫn từ cơ bản đến nâng cao, bao gồm **IP tĩnh/động**, **Subnetting**, **Routing**, và **ví dụ cấu hình Cisco**.
 
----
+<!--more-->
 
 ## 🧩 1. Địa chỉ IP động và tĩnh
 

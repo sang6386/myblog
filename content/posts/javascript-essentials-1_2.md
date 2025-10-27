@@ -13,7 +13,7 @@ description = "Phân tích chuyên sâu về biểu thức, toán tử và cấu
 Bài viết này giúp bạn hiểu sâu về cách JavaScript **tính toán biểu thức**, **vận hành toán tử**, và **điều khiển luồng chương trình** qua cấu trúc điều kiện.  
 > Dựa theo khóa học *JavaScript Essentials 1* trên Cisco Networking Academy.
 
----
+<!--more-->
 
 ## 📘 Mục lục
 1. [Giới thiệu](#giới-thiệu)  

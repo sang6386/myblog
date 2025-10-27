@@ -11,7 +11,7 @@ categories = ["Lập trình mạng"]
 Trong thời đại kết nối, **mạng máy tính** là nền tảng để mọi ứng dụng Internet hoạt động – từ việc duyệt web, gửi email cho đến gọi API giữa các hệ thống.  
 Khóa học **Networking Basics** (Cisco Networking Academy) giúp bạn nắm được tư duy cốt lõi về cách dữ liệu di chuyển trong mạng và cách các thiết bị giao tiếp với nhau.
 
----
+<!--more-->
 
 ## 🧩 1. Mạng máy tính là gì?
 

@@ -73,38 +73,119 @@ body {
   transform:translateY(0);
 }
 
-/* ===================== POSTS GRID ===================== */
+/* ===================== POSTS LAYOUT ===================== */
+.posts-wrapper {
+  padding: 3rem 2rem;
+}
+
 .posts-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 cột responsive */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 2rem 1rem;
-  justify-items: center; /* căn giữa từng card */
+  justify-items: center;
 }
 
+/* ===================== NEON BORDER GLOW EFFECT ===================== */
 .post-card {
+  position: relative;
+  overflow: hidden; /* ẩn phần glow vượt ra ngoài */
   background: var(--card-bg);
-  backdrop-filter: blur(10px);
   border-radius: 1rem;
-  padding: 1rem;
-  text-align: center; /* card nội dung căn giữa */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+  max-width: 360px;
   width: 100%;
-  max-width: 350px;
+  min-height: 360px;
   display: flex;
-  flex-direction: column; 
-  justify-content: space-between; /* nội dung card trải đều */
-  min-height: 400px; /* tất cả card đồng đều chiều cao */
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* hiệu ứng glow khi hover */
+.post-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(120deg, #00ffff, #00aaff, #00ffff, #00aaff);
+  background-size: 300% 300%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  animation: neonBorderMove 4s linear infinite;
+}
+
+/* Hiệu ứng ánh sáng lan tỏa quanh card */
+.post-card::after {
+  content: "";
+  position: absolute;
+  inset: -5px; /* mở rộng viền glow ra ngoài 1 chút */
+  border-radius: inherit;
+  background: radial-gradient(circle at center, rgba(0,255,255,0.35), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  filter: blur(15px);
+}
+
+.post-card:hover::after {
+  opacity: 1;
+}
+
+/* Tạo lớp overlay để nội dung hiển thị phía trên viền */
+.post-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hiệu ứng glow chuyển động */
+@keyframes neonBorderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Kết hợp hiệu ứng hover tổng thể */
 .post-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,255,255,0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 255, 255, 0.35);
 }
 
 .post-card img {
   max-width: 100%;
   border-radius: 0.5rem;
+}
+
+.post-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--link-color);
+}
+
+.post-summary {
+  color: var(--text-color);
+  opacity: 0.9;
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 0.8rem;
 }
 
 /* ===================== TAG FILTER ===================== */
@@ -169,3 +250,4 @@ body.light-mode {
 body.light-mode .post-card {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
+

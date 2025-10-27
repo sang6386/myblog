@@ -10,7 +10,7 @@ categories = ["Lập trình web"]
 
 Hiểu **bất đồng bộ (Asynchronous)** giúp xử lý dữ liệu từ server hiệu quả, tránh block UI, và là nền tảng cho SPA (Single Page Application).
 
----
+<!--more-->
 
 ### 🧩 1. Promises
 

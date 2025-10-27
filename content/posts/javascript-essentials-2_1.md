@@ -15,7 +15,7 @@ description = "Khám phá hàm nâng cao, phạm vi (scope) và closure trong Ja
 > **Hàm nâng cao (Advanced Functions)**, **Phạm vi (Scope)**, và **Closure (Bao đóng)**.  
 > Nếu nắm vững chúng, bạn đã đi được nửa chặng đường để trở thành **Front-end Developer chuyên nghiệp**.
 
----
+<!--more-->
 
 ## 📘 Mục lục
 
