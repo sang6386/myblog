@@ -3,13 +3,13 @@
   <div class="w-90 w-60-ns bg-white br3 shadow-4 pa4 pa5-ns fade-in">
     
     <!-- Ảnh đại diện -->
-    <div class="tc mb4">
+      <div class="tc mb4">
+      <h1 class="f2 fw6 mt3 mb2">{{ .Title }}</h1>
       {{ with .Params.image }}
         <img src="{{ . | relURL }}" alt="Ảnh cá nhân" 
              class="br-100 h5 w5 shadow-4 grow" 
              style="object-fit: cover; transition: transform 0.3s;">
       {{ end }}
-      <h1 class="f2 fw6 mt3 mb2">{{ .Title }}</h1>
       <p class="gray f5">Sinh viên lớp <strong>22DTHC5</strong> – Ngành <em>Công nghệ Thông tin</em></p>
     </div>
 
