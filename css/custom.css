@@ -1,207 +1,239 @@
-/* =================== 🌐 BASE THEME =================== */
+/* ====================== CUSTOM.CSS =========================
+   Tùy chỉnh giao diện cho blog cá nhân Hugo
+   Bao gồm: layout bài viết, about page, chứng chỉ, hiệu ứng, v.v.
+==============================================================*/
 
+/* ----------- CẤU HÌNH TỔNG QUAN ----------- */
 body {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  background-color: #fafafa;
-  color: #222;
-  line-height: 1.7;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  background-color: #f5f7fa;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #1f2937;
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-a {
-  color: #0066cc;
-  text-decoration: none;
-  transition: color 0.3s ease;
+/* Fade-in animation khi load */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.9s ease-in forwards;
 }
-a:hover {
-  text-decoration: underline;
-}
-
-/* 🌞 LIGHT MODE */
-:root {
-  --bg-color: #ffffff;
-  --text-color: #222222;
-  --card-bg: #f9f9f9;
-  --link-color: #1a73e8;
-}
-
-/* 🌚 DARK MODE */
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --card-bg: #1e1e1e;
-  --link-color: #8ab4f8;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Áp dụng màu toàn trang */
-html, body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+/* Hover scale effect cho ảnh */
+img.grow {
+  transition: transform 0.3s ease-in-out;
+}
+img.grow:hover {
+  transform: scale(1.05);
 }
 
-article, .bg-white {
-  background-color: var(--card-bg) !important;
-  color: var(--text-color);
+/* ----------- ABOUT PAGE (CHỨNG CHỈ) ----------- */
+.cert-section {
+  margin-top: 4rem;
+  text-align: center;
+  animation: fadeUp 0.8s ease-out;
 }
 
-/* 🌗 Nút chuyển sáng/tối */
-.theme-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
+.cert-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #007acc;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.cert-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+.cert-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+}
+
+.cert-img {
+  width: 100%;
+  max-width: 240px;
+  border-radius: 0.8rem;
   cursor: pointer;
-  background: var(--card-bg);
-  color: var(--text-color);
-  border: 1px solid var(--link-color);
-  border-radius: 50%;
-  width: 46px;
-  height: 46px;
-  font-size: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+.cert-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+.cert-title {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #1f2937;
+}
+
+/* 🌈 Nút xem PDF */
+.btn-cert {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(118, 75, 162, 0.25);
+}
+.btn-cert:hover {
+  transform: scale(1.08) rotate(-1deg);
+  box-shadow: 0 6px 20px rgba(118, 75, 162, 0.35);
+  filter: brightness(1.15);
+}
+
+/* 🔍 Lightbox (zoom ảnh mượt kiểu Framer Motion) */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-.theme-toggle:hover {
-  background: var(--link-color);
-  color: white;
-  transform: scale(1.1);
-}
-
-/* =================== ⚡ CYBERPUNK NEON STYLE =================== */
-
-/* 💠 Nền lưới neon động */
-body {
-  background: radial-gradient(circle at top, #021027 0%, #000 100%);
-  color: #e0f7ff;
-  font-family: 'Orbitron', sans-serif;
-  overflow-x: hidden;
-}
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px),
-    linear-gradient(rgba(0,255,255,0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: moveGrid 10s linear infinite;
-  z-index: -1;
-  opacity: 0.4;
-}
-@keyframes moveGrid {
-  from { background-position: 0 0, 0 0; }
-  to { background-position: 40px 40px, 40px 40px; }
-}
-
-/* =================== 🎴 CARD BÀI VIẾT =================== */
-
-.post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
-
-/* CARD cơ bản */
-.post-card {
-  background: rgba(10, 10, 20, 0.9);
-  border-radius: 12px;
-  padding: 20px;
-  color: #e0f7ff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid transparent;
-  height: 440px; /* ✅ Cố định chiều cao */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* ✨ Viền neon chạy quanh */
-.post-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  background: linear-gradient(90deg, #00f0ff, #ff00c8, #00f0ff);
-  background-size: 400% 400%;
-  border-radius: 12px;
-  animation: neonBorder 5s linear infinite;
   opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 0;
+  backdrop-filter: blur(0);
+  transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1000;
 }
-.post-card:hover::before { opacity: 1; }
-
-@keyframes neonBorder {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.lightbox-overlay.active {
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 1;
+  backdrop-filter: blur(12px);
 }
-
-/* 🌈 Glow tổng thể khi hover */
-.post-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+.lightbox-content img {
+  transform: scale(0.85);
+  border-radius: 1rem;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
 }
-
-/* =================== 🔤 NỘI DUNG TRONG CARD =================== */
-
-.post-title {
-  font-size: 1.3rem;
-  color: #00ffff;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 2;
-}
-.post-meta {
-  font-size: 0.9rem;
-  color: #b0c4de;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 2;
+.lightbox-overlay.active .lightbox-content img {
+  transform: scale(1);
 }
 
-/* Giới hạn tóm tắt */
+/* 🪄 Fade Up Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ----------- BÀI VIẾT / POST SUMMARY ----------- */
 .post-summary {
   font-size: 1rem;
   color: #e0f7ff;
   flex-grow: 1;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* ✅ Hiển thị tối đa 5 dòng */
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
   text-overflow: ellipsis;
   opacity: 0.9;
   position: relative;
   z-index: 2;
 }
 
-/* =================== 🔘 NÚT XEM THÊM NEON =================== */
-
-.neon-btn {
+/* ----------- NÚT XEM THÊM (NEON) ----------- */
+.read-more-btn {
   display: inline-block;
-  align-self: flex-start;
-  text-align: center;
-  color: #fff;
-  border: 2px solid #00ffff;
-  border-radius: 8px;
-  padding: 0.5rem 1.2rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: #007acc;
+  color: white;
+  border-radius: 10px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 0 8px #00ffff;
-  margin-top: 12px;
-  position: relative;
-  z-index: 2;
+  font-weight: 600;
 }
-.neon-btn:hover {
-  color: #0ff;
-  box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
-  border-color: #ff00ff;
-  transform: scale(1.05);
+.read-more-btn:hover {
+  background: #0a84ff;
+  box-shadow: 0 0 10px #0a84ff, 0 0 20px #0a84ff;
+}
+
+/* ----------- FOOTER ----------- */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 768px) {
+  .cert-img {
+    height: 120px;
+  }
+  .cert-card {
+    padding: 0.75rem;
+  }
+  .cert-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* ----------- SCROLL TO TOP BUTTON ----------- */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #007acc;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+  display: none;
+}
+.scroll-top:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #007acc;
+}
+
+/* ----------- DARK MODE ----------- */
+body.dark-mode {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+body.dark-mode .cert-card {
+  background-color: rgba(31, 41, 55, 0.9);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+body.dark-mode .cert-title {
+  color: #f9fafb;
+}
+body.dark-mode .read-more-btn {
+  background: #2563eb;
+}
+body.dark-mode .read-more-btn:hover {
+  box-shadow: 0 0 10px #3b82f6, 0 0 20px #60a5fa;
+}
+body.dark-mode .btn-cert {
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
 }
