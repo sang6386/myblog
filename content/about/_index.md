@@ -3,7 +3,7 @@ title = "About Me"
 date = "2025-10-21"
 layout = "about"
 image = "images/avatar.jpg"
-cv = "/files/NguyenNgocSang_CV.pdf"
+cv = "/files/CV_NGUYENNGOCSANG.pdf"
 github = "https://github.com/sang6386"
 linkedin = "https://linkedin.com/in/sang6386"
 email = "mailto:1120ngsang25@gmail.com"
@@ -13,18 +13,14 @@ draft = false
 <section class="mw7 center ph3 pv5 lh-copy fade-in-up">
 
   <!-- 🧑‍💻 Ảnh và thông tin cá nhân -->
-  <div align="center" class="mb5">
-    <img src="{{ . | absURL }}" alt="Ảnh cá nhân"
-     alt="Ảnh cá nhân" 
-     width="200"
-     class="br-100 shadow-5 mb3 hover-scale"
-     style="object-fit: cover; border: 4px solid rgba(3, 3, 3, 0.2);">
-    <h1 class="f2 fw7 mt3 mb2 black">Nguyễn Ngọc Sang</h1>
-    <p class="f5 light-silver mt0">Sinh viên lớp <strong>22DTHC5</strong> – Ngành <em>Công nghệ Thông tin</em></p>
-    <a href="/files/NguyenNgocSang_CV.pdf" class="btn-cv grow mt3" target="_blank">
-      📄 Download CV
-    </a>
-  </div>
+  <h1 class="f2 fw7 mt3 mb2 black">Nguyễn Ngọc Sang</h1>
+  <p class="f5 light-silver mt0">
+    Sinh viên lớp <strong>22DTHC5</strong> – Ngành <em>Công nghệ Thông tin</em>
+  </p>
+  <a href="/files/CV_NGUYENNGOCSANG.jpg" class="btn-cv grow mt3" target="_blank">
+    📄 Download CV
+  </a>
+</div>
 
   <!-- 💻 Giới thiệu bản thân -->
   <div class="card glass p3 mb5">
