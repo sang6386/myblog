@@ -3,12 +3,28 @@ title = "About Me"
 date = "2025-10-21"
 layout = "about"
 image = "images/avatar.jpg"
-cv = "/files/CV_NGUYENNGOCSANG.pdf"
+cv = "/files/CV_NGUYENNGOCSANG.jpg"
 github = "https://github.com/sang6386"
 linkedin = "https://linkedin.com/in/sang6386"
-email = "mailto:1120ngsang25@gmail.com"
+email = "mailto:123ngsang25@gmail.com"
 draft = false
+
+[[params.certificates]]
+title = "JavaScript Essentials 1"
+image = "/certificates/javascript/javascript-essentials-1.png"
+pdf = "/certificates/javascript/JavaScriptEssentials1.pdf"
+
+[[params.certificates]]
+title = "JavaScript Essentials 2"
+image = "/certificates/javascript/javascript-essentials-2.png"
+pdf = "/certificates/javascript/JavaScriptEssentials2.pdf"
+
+[[params.certificates]]
+title = "Networking Basics"
+image = "/certificates/networkingbasic/networking-basics.png"
+pdf = "/certificates/networkingbasic/NetworkingBasics.pdf"
 +++
+
 
 <section class="mw7 center ph3 pv5 lh-copy fade-in-up">
 
