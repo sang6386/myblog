@@ -1,32 +1,53 @@
 {{ define "main" }}
-  <article class="pa3 pa4-ns">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy">
-      {{ .Content }}
-    </section>
+<article class="pa3 pa4-ns fade-in">
+  <!-- Giới thiệu trang -->
+  <section class="intro-section cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy">
+    {{ .Content }}
+  </section>
 
-    {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
+  <!-- Lấy danh sách bài viết -->
+  {{ $paginator := .Paginate (where .Site.RegularPages "Section" "posts") }}
 
-    <section class="post-grid">
-  {{ range $paginator.Pages }}
-    <div class="post-card">
-      <h2 class="post-title">
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </h2>
-      <p class="post-meta">
-        🖋️ {{ with .Params.author }}{{ . }}{{ else }}Tác giả{{ end }} • 📅 {{ .Date.Format "02 Jan 2006" }}
-      </p>
+  <!-- Lưới bài viết Cyberpunk -->
+  <section class="post-grid">
+    {{ range $paginator.Pages }}
+      <div class="post-card motion-fade-up">
+        <!-- Ảnh đại diện bài viết -->
+        {{ with .Params.image }}
+          <div class="post-img-wrapper">
+            <img src="{{ . }}" alt="{{ $.Title }}" class="post-img grow" />
+          </div>
+        {{ else }}
+          <div class="post-img-wrapper">
+            <img src="/images/default.jpg" alt="{{ $.Title }}" class="post-img grow" />
+          </div>
+        {{ end }}
 
-      {{ if .Params.description }}
-        <p class="post-summary">{{ .Params.description }}</p>
-      {{ else }}
-        <p class="post-summary">{{ .Summary }}</p>
-      {{ end }}
+        <!-- Nội dung bài viết -->
+        <div class="post-card-body">
+          <h2 class="post-title neon-text">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
 
-      <a href="{{ .RelPermalink }}" class="neon-btn">Xem thêm →</a>
-    </div>
-  {{ end }}
-</section>
+          <p class="post-meta">
+            🖋️ {{ with .Params.author }}{{ . }}{{ else }}Tác giả{{ end }} • 📅 {{ .Date.Format "02 Jan 2006" }}
+          </p>
 
+          {{ if .Params.description }}
+            <p class="post-summary">{{ .Params.description }}</p>
+          {{ else }}
+            <p class="post-summary">{{ .Summary }}</p>
+          {{ end }}
+
+          <a href="{{ .RelPermalink }}" class="neon-btn">Xem thêm →</a>
+        </div>
+      </div>
+    {{ end }}
+  </section>
+
+  <!-- Phân trang -->
+  <div class="pagination-wrapper fade-in">
     {{ template "_internal/pagination.html" $paginator }}
-  </article>
+  </div>
+</article>
 {{ end }}
